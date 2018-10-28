@@ -7,7 +7,7 @@
 ---
 # AV1
 
-- Codec Video opensource e patent-unencumbered 
+- Codec Video opensource e patent-unencumbered
 - Prodotto dall'`Alliance for Open Media`
 - Mira a superare `HEVC` ed essere usato **ovunque**.
 	- Gia\` presente in `Firefox` e `Chrome`
@@ -48,6 +48,7 @@ Libaom fornisce ottima qualita\` al costo in tempi di codifica enormente dilatat
 	- Ottimizzazioni SIMD relativamente limitate
 	- Implementazione C non orientata alle performance
 	- Algoritmi di ricerca esaustiva usati sin troppo spesso
+
 - Codice usato per lo sviluppo del codec
 	- 295233 righe di codice C (e diverse migliaia in altri linguaggi)
 	- Molte delle quali esperimenti ormai scartati
@@ -62,7 +63,7 @@ Libaom fornisce ottima qualita\` al costo in tempi di codifica enormente dilatat
 	- 25805 righe di codice Rust 
 	- Reimplementazione di AV1 il piu\` indipendente possibile dalle scelte fatte in `libaom`.
 	- Incompleto ma funzionante
-- Scelte specifiche sull'utilizzo
+- Scelte specifiche
 	- Ridurre al minimo le opzioni di configurazione 
 	- Focus su Video on-demand come primo obiettivo
 		- (il corpus di Wikipedia)
@@ -75,8 +76,27 @@ Libaom fornisce ottima qualita\` al costo in tempi di codifica enormente dilatat
 > Essendo ancora una implementazione molto semplice di settimana in settimana e di mese in mese ci sono progressi notevoli.
 
 ---
+# Feature correnti
+
+dal [README.md](https://github.com/xiph/rav1e/blob/master/README.md):
+> - Intra and inter frames
+> - 64x64 superblocks
+> - 4x4 to 32x32 RDO-selected square blocks
+> - DC, H, V, Paeth, and smooth prediction modes
+> - 4x4 DCT and ADST transforms
+> - 8-, 10- and 12-bit depth color
+> - Variable speed settings
+> - ~10fps encoding @ 480p
+
+---
+# Versioni sperimentali
+
+![img](rav1e-live.png) 
+30 fps @ 480p ( IBC 2018 )
+
+---
 # rav1e su github
-## Numero fork
+## Numero di `git clone`
 
 ![img](rav1e-forks.png)
 
@@ -96,6 +116,9 @@ Libaom fornisce ottima qualita\` al costo in tempi di codifica enormente dilatat
 - **rate-control**: verra\` introdotto in questi mesi
 - **ottimizzazioni SIMD**: implementate via [stdsimd](https://github.com/rust-lang-nursery/stdsimd) o assembly  direttamente.
 - **multithread**: sia per-frame sia per-tile
+- **BM-tree**: ...
+
+Ogni aiuto e\` ben accetto!
 
 ---
 # Domande?
